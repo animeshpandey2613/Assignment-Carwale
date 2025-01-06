@@ -1,0 +1,34 @@
+Git and GitHub -
+
+Git - Git is a software that helps in versioning out application, i.e., it also helps us to retract to a specific version so that we can undo
+any unwanted change. Also it allows multiple user to collaborate simultaneously by providing the features such as branching and merging.
+
+GitHub - GitHub is a web based application which provides user to collaborate the users remotely by storing the repository on remote servers.
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+SOME GIT COMMANDS ARE AS FOLLOWS - 
+git init ->  this initializes the git repository and also makes the .git folder which has the info about the staging area (index file) and
+            also the local repository.
+
+git remote add origin ${repo link} ->   This helps in connecting the remote repo with the local repository.
+git remote -v ->    to verify remote.
+git add ${file name} -> this add the specific file to the staging area.
+git add . ->    this adds all the files to the staging area.
+git commit -m ${message} -> this commits the changes to the local git repository.
+git push origin ${branch name} ->this pushes the changes to the remote repository.
+git push -u origin ${branch name} ->this sets the upstream so that you need not to write the origin again and again.
+git clone ${github repo url} ->this clones a particular repository.
+git status ->tells us about the status of all the files, i.e., Staged, Modified, Unchanged, Untracked.
+git pull origin ${branch name}->this pulls any changes in a particular branch.
+git branch -> this retuns the branch you are in (ONLY IF YOU HAVE PUSHED SOMETHING TO IT).
+git logs -> this generates the logs about all the commits that have been made along with their hash number.
+git reset ${hash code} -> this will change the head of the branch to the hashed commit.
+git reset --hard ${hash code} ->this will reflects the changes to the local project as well.
+git checkout ${branch name} ->this is used for jumping from one branch to other.
+git checkout -b ${new name} ->creates a new branch.
+git branch -d ${branch name} ->this deletes a branch.
+                            #NOTE - you cannot checkout from a branch before commiting or stashing the changes.
+git diff ${branch name}->this is used to get the differences between two branches.
+git merge ${branch name}->this merges two branches.
+git rebase ${branch1} -> merges the changes of the branch 1 to every commit of your branch.
+gir forward merge -> this straightens the history chain 
