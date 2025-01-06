@@ -27,8 +27,43 @@ git reset --hard ${hash code} ->this will reflects the changes to the local proj
 git checkout ${branch name} ->this is used for jumping from one branch to other.
 git checkout -b ${new name} ->creates a new branch.
 git branch -d ${branch name} ->this deletes a branch.
-                            #NOTE - you cannot checkout from a branch before commiting or stashing the changes.
+#NOTE - you cannot checkout from a branch before commiting or stashing the changes.
 git diff ${branch name}->this is used to get the differences between two branches.
 git merge ${branch name}->this merges two branches.
 git rebase ${branch1} -> merges the changes of the branch 1 to every commit of your branch.
-gir forward merge -> this straightens the history chain 
+To merge changes to the main branch you can also raise a PR so that the owner of the repo can review it
+before merging it to the main branch
+
+
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/
+
+Web Fundamentals
+
+APIs are the interface that helps in communcation between two systems.
+It also works as a firewall which allows user to only use a specific computation of server via URIs
+
+APIs are of many types, some of them are -
+RESTful API - Mostly used for application involving CRUD Operations
+SOAP API -  uses XML for communcation, It is used when security is the top priority
+GraphQL -   uses query params for giving a detailed information to the server that what is the need of the 
+            client.
+Web Sockets - Bi directional api specially for chatting application perspective.
+gRPC - Used for microservices.
+
+principals of RESTful APIs - 
+1. Uniformity
+2. Client Server Architecture.
+3. Stateless
+4. Cacheble
+5. Layered systems
+6. Code on Demand
+
+HTTP is a protocol used for communication over web.
+The header attached to the request provides the matadata to the request/ response ex - content type can 
+be text or html ot json.
+Status code tells us about the response status-
+1xx states some information
+2xx states sucessfulness
+3xx states redirection
+4xx states error (client side)
+5xx states serverside error.
