@@ -42,7 +42,13 @@ Web Fundamentals
 APIs are the interface that helps in communcation between two systems.
 It also works as a firewall which allows user to only use a specific computation of server via URIs
 
-APIs are of many types, some of them are -
+APIs based on purpose of need is -
+Internal API - private use
+Open API - Public API
+Partner API - Companies use API to coordinate with each other.
+Composite API - Combining multiple Data and multiple APIs.
+
+APIs have many Architecture type, some of them are -
 RESTful API - Mostly used for application involving CRUD Operations
 SOAP API -  uses XML for communcation, It is used when security is the top priority
 GraphQL -   uses query params for giving a detailed information to the server that what is the need of the 
@@ -67,3 +73,16 @@ Status code tells us about the response status-
 3xx states redirection
 4xx states error (client side)
 5xx states serverside error.
+
+Best Practices of REST - 
+1.Use Nouns not Verbs
+2.Use Prural Nouns
+3.Version APIs for backword compatibility
+  i) URL versioning
+  ii) Req Params versioning
+  iii) Context negotiation
+  iv) Custom Header versioning
+4.Use Proper Status code
+5.Error Handling
+6.Pagination and Filtering
+7.Handling Auth
