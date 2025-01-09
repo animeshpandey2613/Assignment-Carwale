@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Login Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/71bc1442c8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="SuccessPage" id="success">
+      You are signed up successfully! Tadaa!!<br />Thank You :)
+    </div>
+    <div class="Container" id="container">
+      <h2 class="Heading">Sign Up</h2>
+      <div class="Subcontainer">
+        <div class="Pair">
+          <div>Username :</div>
+          <input type="text" data-type="username" id="username" />
+          <div class="ErrorBox" id="usernameError"></div>
+        </div>
+        <div class="Pair">
+          <div>Email :</div>
+          <input type="text" data-type="email" id="email" />
+          <div class="ErrorBox" id="emailError"></div>
+        </div>
+        <div class="Pair">
+          <div>Password :</div>
+          <div class="adjustEye">
+            <input type="password" data-type="password" id="password" />
+            <div id="eye1" class="eye">
+              <i class="fa-regular fa-eye"></i>
+            </div>
+          </div>
+          <div class="ErrorBox" id="passwordError"></div>
+        </div>
+        <div class="Pair">
+          <div>Confirm Password :</div>
+          <div class="adjustEye">
+            <input
+              type="password"
+              data-type="confirmPassword"
+              id="confirmPassword"
+            />
+            <div id="eye2" class="eye">
+              <i class="fa-regular fa-eye"></i>
+            </div>
+          </div>
+          <div class="ErrorBox" id="confirmPasswordError"></div>
+        </div>
+        <button onclick="ButtonHandler()">SignUp</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
