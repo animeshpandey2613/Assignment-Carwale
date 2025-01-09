@@ -186,7 +186,7 @@ ButtonHandler = () => {
     container.style.filter = "blur(5px)";
     success.classList.add("correct");
   } else {
-    success.innerHTML = "Form Submission Failed";
+    success.innerHTML = "Form Submission Failed!";
     success.style.display = "flex";
     container.style.filter = "blur(5px)";
     success.classList.add("incorrect");
