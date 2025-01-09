@@ -20,7 +20,7 @@ let allCheckers = {
   confirmPassword: false,
 };
 
-class Checker {
+class Check {
   constructor(ele, errorBox, password = null) {
     this.ele = ele;
     this.errorBox = errorBox;
@@ -146,10 +146,10 @@ let emailError = document.getElementById("emailError");
 let passwordError = document.getElementById("passwordError");
 let confirmPasswordError = document.getElementById("confirmPasswordError");
 
-let usernameChecker = new Checker(username, usernameError);
-let emailChecker = new Checker(email, emailError);
-let passwordChecker = new Checker(password, passwordError);
-let confirmPasswordChecker = new Checker(
+let usernameChecker = new Check(username, usernameError);
+let emailChecker = new Check(email, emailError);
+let passwordChecker = new Check(password, passwordError);
+let confirmPasswordChecker = new Check(
   confirmPassword,
   confirmPasswordError,
   password
