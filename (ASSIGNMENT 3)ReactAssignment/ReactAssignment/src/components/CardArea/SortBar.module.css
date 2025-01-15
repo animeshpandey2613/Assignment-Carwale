@@ -1,0 +1,21 @@
+
+.container{
+    width: 89%;
+    padding: 10px;
+    background-color: rgb(217, 217, 217);
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.sortArea{
+    display:flex;
+    align-items: center;
+    gap: 10px;
+    /* margin-right: 50px; */
+    justify-content: flex-end;
+}
+.sortSelect{
+    padding: 10px 15px;
+    width: 160px;
+    color: rgb(45, 45, 45);
+    border-radius: 5px;
+}

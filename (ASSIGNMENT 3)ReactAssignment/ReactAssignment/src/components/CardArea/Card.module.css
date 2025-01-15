@@ -1,0 +1,88 @@
+.container{
+    height: 400px;
+    width: 45%;
+    position: relative;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid rgb(214, 214, 214);
+    overflow: hidden;
+    color: rgb(60, 60, 60);
+}
+.tag{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: small;
+    background-color: orange;
+}
+.imageArea{
+    width: 100%;
+    height: 60%;
+    img{
+        object-fit:cover;
+        width: 100%;
+        height:100%;
+    }
+}
+.heading{
+    font-weight: 600;
+    white-space: nowrap; 
+    overflow: hidden;      
+    text-overflow: ellipsis;
+}
+.specsArea{
+    font-size:0.8em;
+    color: rgb(117, 117, 117);
+    margin-top: 3px;
+}
+.contentArea{
+    padding: 10px;
+}
+.priceArea{
+    display:flex;
+    margin-top: 7px;
+    justify-content: space-between;
+}
+.price{
+    font-weight: 600;
+}
+.subButtonArea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.emiArea{
+    font-size: small;
+}
+.emiLabel{
+    color: rgb(117, 117, 117);
+}
+.button1{
+    color: #0979b6;
+    cursor:pointer;
+    font-weight: 600;
+}
+.button2{
+    color: grey;
+    cursor:pointer;
+    background-color: rgb(227, 227, 227);
+    font-weight: 600;
+    font-size: x-small;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.buttonMain{
+    width: 100%;
+    display: flex;
+    cursor:pointer;
+    justify-content: center;
+    align-items:center;
+    padding: 10px 0;
+    background-color: red;
+    color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+}

@@ -1,0 +1,10 @@
+.Container{
+  margin:40px 150px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+body{
+  background-color: #f0f0f0;
+  font-family: LatoGoogle, Lato, LatoWeb, sans-serif;
+}
