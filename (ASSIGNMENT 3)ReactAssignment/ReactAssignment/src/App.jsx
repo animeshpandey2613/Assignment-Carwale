@@ -1,6 +1,5 @@
 import FilterArea from "./components/FilterArea/FilterArea"
 import CardArea from "./components/CardArea/CardArea"
-import Navbar from "./components/Navbar/Navbar";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {fetchCar, fetchCarSuccess, fetchUserFailure} from './redux/data/dataActions';
@@ -31,13 +30,10 @@ useEffect(() => {
 
 
   return (
-    <>
-    <div><Navbar /></div>
     <div className="Container">
       <FilterArea />
       <CardArea />
     </div>
-    </>
   )
 }
 
