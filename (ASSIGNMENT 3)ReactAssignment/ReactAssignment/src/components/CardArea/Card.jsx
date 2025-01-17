@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './Card.module.css'
+import style from './styles/Card.module.css'
 function Card({data}) {
   return (
     <div className={style.container}>

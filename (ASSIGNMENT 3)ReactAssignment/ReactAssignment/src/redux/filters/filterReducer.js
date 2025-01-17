@@ -1,8 +1,10 @@
 import { SET_BUDGET, SET_FUEL, SET_SORT, REMOVE_BUDGET, RESET_SORT, REMOVE_ALL_FILTERS } from "./filterTypes"
 const initialState = {
     sort : null,
-    minBudget : 0,
-    maxBudget : 1000,
+    budget:{
+        min:0,
+        max:20,
+    },
     fuel : [],
 }
 
@@ -16,14 +18,12 @@ const filterReducer = (state = initialState, action) => {
         case SET_BUDGET:
             return {
                 ...state,
-                maxBudget : action.payload.max,
-                minBudget : action.payload.min,
+                budget:action.payload,
             }
         case REMOVE_BUDGET:
                 return {
                     ...state,
-                    maxBudget : 21,
-                    minBudget : 0,
+                    budget:initialState.budget,
                 }
         case SET_SORT:
                 return {

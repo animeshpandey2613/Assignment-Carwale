@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react'
-import style from './FilterArea.module.css'
+import style from './styles/FilterArea.module.css'
 import { CiFilter } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
@@ -16,7 +16,6 @@ const dispatch = useDispatch();
 
 const ClearHandler = ()=>{
   dispatch(removeAllFilters());
-  window.location.reload();
 }
 
 useEffect(() => {

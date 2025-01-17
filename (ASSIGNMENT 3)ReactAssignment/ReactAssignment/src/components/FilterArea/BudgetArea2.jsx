@@ -1,25 +1,20 @@
-import React , {useState} from 'react'
-import style from './BudgetArea2.module.css'
-
+import React , {useEffect, useState} from 'react'
+import style from './styles/BudgetArea2.module.css'
 import { setBudget } from '../../redux/filters/filterActions';
-import { useDispatch} from 'react-redux';
-
-
-
-
-
+import { useDispatch, useSelector} from 'react-redux';
 function PriceRange() {
   
     const [range, setRange] = useState({ min: 0, max: 20 });
     const maxPossibleValue = 20;
-    const dispatch = useDispatch()
-  
+    const dispatch = useDispatch();
+    const budgetChange = useSelector((state)=>state.filterReducer.budget);
+    useEffect(()=>{
+      setRange(budgetChange);
+    }, [budgetChange]);
     const handleMinChange = (e) => {
       const newMin = Math.min(Number(e.target.value), range.max);
       setRange(prev => ({ ...prev, min: newMin }));
       dispatch(setBudget(newMin, range.max))
-
-      
     };
   
     const handleMaxChange = (e) => {

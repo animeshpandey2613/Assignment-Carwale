@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from './Card'
-import style from './CardArea.module.css'
+import style from './styles/CardArea.module.css'
 import SortBar from './SortBar'
 import { useSelector } from 'react-redux'
 function CardArea() {
