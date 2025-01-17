@@ -1,4 +1,4 @@
-import { FETCH_CAR, FETCH_CAR_SUCCESS, FETCH_CAR_FAILURE } from './dataTypes'
+import { FETCH_DATA, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE } from './dataTypes'
 
 const initialState = {
     loading: false,
@@ -8,18 +8,18 @@ const initialState = {
 
 const dataReducer = (state = initialState, action) => {
     switch(action.type) {
-        case FETCH_CAR:
+        case FETCH_DATA:
             return {
                 ...state,
                 loading: true
             }
-        case FETCH_CAR_SUCCESS:
+        case FETCH_DATA_SUCCESS:
             return {
                 loading: false,
                 cars: action.payload,
                 error: ''
             }
-        case FETCH_CAR_FAILURE:
+        case FETCH_DATA_FAILURE:
             return {
                 loading: false,
                 cars: [],

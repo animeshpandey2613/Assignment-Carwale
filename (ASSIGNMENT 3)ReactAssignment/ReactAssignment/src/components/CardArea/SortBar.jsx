@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './SortBar.module.css'
+import style from './styles/SortBar.module.css'
 import {useDispatch} from 'react-redux'
 import {setSort} from '../../redux/filters/filterActions'
 import {removeSort} from '../../redux/filters/filterActions'

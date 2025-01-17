@@ -1,19 +1,19 @@
-import { FETCH_CAR, FETCH_CAR_SUCCESS, FETCH_CAR_FAILURE } from "./dataTypes"
-export const fetchCar=()=>{
+import { FETCH_DATA, FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE } from "./dataTypes"
+export const fetchData=()=>{
     return{
-        type:FETCH_CAR,
+        type:FETCH_DATA,
     }
 }
-export const fetchCarSuccess=(e)=>{
+export const fetchDataSuccess=(e)=>{
     return{
-        type:FETCH_CAR_SUCCESS,
+        type:FETCH_DATA_SUCCESS,
         payload:e,
     }
 }
 
-export const fetchUserFailure=(e)=>{
+export const fetchDataFailure=(e)=>{
     return{
-        type:FETCH_CAR_FAILURE,
+        type:FETCH_DATA_FAILURE,
         payload:e,
     }
 }

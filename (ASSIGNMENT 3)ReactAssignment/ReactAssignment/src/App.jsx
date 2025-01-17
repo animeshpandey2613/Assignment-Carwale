@@ -2,7 +2,7 @@ import FilterArea from "./components/FilterArea/FilterArea"
 import CardArea from "./components/CardArea/CardArea"
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import {fetchCar, fetchCarSuccess, fetchUserFailure} from './redux/data/dataActions';
+import {fetchData, fetchDataSuccess, fetchDataFailure} from './redux/data/dataActions';
 import { useSelector } from "react-redux";
 import urlModify from "./utils/URLModify";
 import SortData from "./utils/SortData";
@@ -17,13 +17,13 @@ const dispatch = useDispatch();
 const URL = 'https://stg.carwale.com/api/stocks';
 useEffect(() => {
   const newUrl = urlModify(URL, filters);
-  dispatch(fetchCar());
+  dispatch(fetchData());
   axios.get(newUrl).then((e)=>{
     if(filters.sort === 'price')
       SortData(e.data.stocks);
-    dispatch(fetchCarSuccess(e.data.stocks));
+    dispatch(fetchDataSuccess(e.data.stocks));
   }).catch((error) => {
-    dispatch(fetchUserFailure(error));
+    dispatch(fetchDataFailure(error));
   });
 
 }, [filters]);
