@@ -62,7 +62,7 @@
 ---
 
 
-![E-commerce Database Schema](https://postimg.cc/hXJY9BVb)
+![E-commerce Database Schema](https://i.postimg.cc/K8QyhczV/model.png)
 
 
 
