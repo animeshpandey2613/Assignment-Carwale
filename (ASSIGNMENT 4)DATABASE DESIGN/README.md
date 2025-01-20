@@ -61,6 +61,10 @@
 
 ---
 
+
+![E-commerce Database Schema](https://ibb.co/0YtXYhj)
+
+
 ### SQL Statements
 
 #### Database and Table Creation:
