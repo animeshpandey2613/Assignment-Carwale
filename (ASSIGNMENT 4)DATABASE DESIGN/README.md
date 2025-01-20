@@ -62,7 +62,8 @@
 ---
 
 
-![E-commerce Database Schema](https://ibb.co/0YtXYhj)
+![E-commerce Database Schema](https://postimg.cc/hXJY9BVb)
+
 
 
 ### SQL Statements
