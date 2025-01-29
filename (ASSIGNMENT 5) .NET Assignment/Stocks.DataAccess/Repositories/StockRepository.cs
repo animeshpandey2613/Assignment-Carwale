@@ -26,13 +26,13 @@ namespace Stocks.DataAccess.Repositories
             if(filter.FuelType.Count != 0){
                 query += " and Fuel in @FuelArray";
             }
-            var cars = await connection.QueryAsync<StockEntity>(query, new 
+            var StockList = await connection.QueryAsync<StockEntity>(query, new 
             {
                 FuelArray = filter.FuelType.Select(f => f.ToString()).ToArray(),
                 filter.MinBudget,
                 filter.MaxBudget
             });
-            return cars;
+            return StockList;
         }
 
         public async Task<StockEntity?> GetByIdAsync(int id)
