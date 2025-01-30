@@ -5,6 +5,7 @@ namespace Stocks.DataAccess.Entities{
         public int Id{get; init;}
         [Required]
         [MaxLength(200)]
+        [MinLength(5)]
         public string MakeName{get; init;}
         public int Year{get; init;}
         [Required]

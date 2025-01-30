@@ -1,10 +1,9 @@
+using System.ComponentModel.DataAnnotations;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Stocks.API.Dtos;
 using Stocks.API.Services;
 using Stocks.DataAccess.Entities;
-using Stocks.DataAccess.Repositories;
-using Utils;
 
 namespace Stocks.API.Controllers{
         [ApiController]
@@ -29,28 +28,32 @@ namespace Stocks.API.Controllers{
             }
             return Ok(DtoList);
         }
-        [HttpGet("{Id}")]
+        [HttpGet("/{Id}")]
         public async Task<IActionResult> ViewStocksById(int Id){
             var stockEntity = await _services.GetStockByIdAsync(Id);
+            if(stockEntity==null)
+            throw new KeyNotFoundException("Stock with this Id does not Exist");
             var Dto = _mapper.Map<StockEntity, GetDto>(stockEntity);
             return Ok(Dto);
         }
         [HttpPost]
         public async Task CreateStocks([FromBody] CreateDto stockDto){
+            if(stockDto == null)
+            throw new NullReferenceException("Please provide the Stock Values");
             var stockEntity = _mapper.Map<CreateDto, StockEntity>(stockDto);
             await _services.CreateStockAsync(stockEntity);
         }
         [HttpPatch]
         public async Task UpdateStocks([FromBody] UpdateDto stockDto){
             if(stockDto.Id <= 0)
-            throw new CustomException("Stock Id not Available!", "Please provide the Stock Id of the stock you want to update.", 400);
+            throw new ValidationException("Please provide the Stock Id of the stock you want to update.");
             var stockEntity = _mapper.Map<UpdateDto, StockEntity>(stockDto);
             await _services.UpdateStockAsync(stockEntity);
         }
         [HttpDelete]
         public async Task DeleteStocks(int Id){
             if(Id == 0)
-            throw new CustomException("Stock Id not Available!", "Please provide the Stock Id of the stock you want to delete.", 400);
+            throw new ValidationException("Please provide the Stock Id of the stock you want to delete.");
             await _services.DeleteStockAsync(Id);
         }
     }

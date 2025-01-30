@@ -1,8 +1,8 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using AutoMapper;
 using Stocks.API.Dtos;
 using Stocks.DataAccess.Entities;
-using Utils;
 
 namespace Stocks.API.Handlers{
     public class FilterAutoMapperHandler:Profile{
@@ -18,7 +18,7 @@ namespace Stocks.API.Handlers{
             string [] FuelStringArr = FuelString.Split('+');
             foreach(string t in FuelStringArr){
                 if(!int.TryParse(t, out int number) || number > 5)
-                throw new CustomException("Invalid Fuel Index!", "Please give numbers between 1 to 5, Insert '+' for multiple index", 400);
+                throw new ValidationException("Please give numbers between 1 to 5, Insert '+' for multiple index");
                 Fuels.Add((FuelType)number);
             }
             return Fuels;
@@ -27,7 +27,7 @@ namespace Stocks.API.Handlers{
         public int ExtractMinBudget(string? Budget){
             if(Budget == null) return 0;
             if(!Budget.Contains('-'))
-            throw new CustomException("Invalid Budget Type", "Please give the budget in the format- 'MinBudget-MaxBudget'");
+            throw new ArgumentException("Please give the budget in the format- 'MinBudget-MaxBudget'");
             return Math.Max(Convert.ToInt32(Budget.Split("-")[0]), 0)*100000;
         }
         public int ExtractMaxBudget(string? Budget){
