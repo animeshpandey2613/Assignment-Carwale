@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using AutoMapper;
 using Stocks.API.Dtos;
 using Stocks.DataAccess.Entities;
+using Utils;
 
 namespace Stocks.API.Handlers{
     public class FilterAutoMapperHandler:Profile{
@@ -16,13 +17,17 @@ namespace Stocks.API.Handlers{
             List<FuelType> Fuels = new();
             string [] FuelStringArr = FuelString.Split('+');
             foreach(string t in FuelStringArr){
-                Fuels.Add((FuelType)Convert.ToInt16(t));
+                if(!int.TryParse(t, out int number) || number > 5)
+                throw new CustomException("Invalid Fuel Index!", "Please give numbers between 1 to 5, Insert '+' for multiple index", 400);
+                Fuels.Add((FuelType)number);
             }
             return Fuels;
         }
 
         public int ExtractMinBudget(string? Budget){
             if(Budget == null) return 0;
+            if(!Budget.Contains('-'))
+            throw new CustomException("Invalid Budget Type", "Please give the budget in the format- 'MinBudget-MaxBudget'");
             return Math.Max(Convert.ToInt32(Budget.Split("-")[0]), 0)*100000;
         }
         public int ExtractMaxBudget(string? Budget){

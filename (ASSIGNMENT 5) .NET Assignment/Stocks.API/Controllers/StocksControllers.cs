@@ -4,6 +4,7 @@ using Stocks.API.Dtos;
 using Stocks.API.Services;
 using Stocks.DataAccess.Entities;
 using Stocks.DataAccess.Repositories;
+using Utils;
 
 namespace Stocks.API.Controllers{
         [ApiController]
@@ -41,11 +42,15 @@ namespace Stocks.API.Controllers{
         }
         [HttpPatch]
         public async Task UpdateStocks([FromBody] UpdateDto stockDto){
+            if(stockDto.Id <= 0)
+            throw new CustomException("Stock Id not Available!", "Please provide the Stock Id of the stock you want to update.", 400);
             var stockEntity = _mapper.Map<UpdateDto, StockEntity>(stockDto);
             await _services.UpdateStockAsync(stockEntity);
         }
         [HttpDelete]
         public async Task DeleteStocks(int Id){
+            if(Id == 0)
+            throw new CustomException("Stock Id not Available!", "Please provide the Stock Id of the stock you want to delete.", 400);
             await _services.DeleteStockAsync(Id);
         }
     }

@@ -31,6 +31,7 @@ builder.Services.AddScoped<IStockRepository, StockRepository>();
 builder.Services.AddScoped<IStockServices, StockServices>();
 builder.Services.AddAutoMapper(typeof(StocksAutoMapperHandler), typeof(FilterAutoMapperHandler));
 var app = builder.Build();
+app.UseMiddleware<GlobalErrorHandler>();
 
 // Configure the HTTP request pipeline.
 
@@ -40,7 +41,6 @@ if(app.Environment.IsDevelopment()){
     app.MapOpenApi();
 }
 
-app.UseMiddleware<GlobalErrorHandler>();
 app.MapControllers();
 
 

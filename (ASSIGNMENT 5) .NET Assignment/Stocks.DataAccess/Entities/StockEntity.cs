@@ -17,7 +17,5 @@ namespace Stocks.DataAccess.Entities{
         [Required]
         [MaxLength(200)]
         public string Fuel{get; init;}
-
-
     }
 }

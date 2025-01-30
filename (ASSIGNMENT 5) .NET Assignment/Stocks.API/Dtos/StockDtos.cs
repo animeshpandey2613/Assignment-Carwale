@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Stocks.API.Dtos{
     public class GetDto{
         public int Id{get; set;}
