@@ -65,6 +65,15 @@ namespace Stocks.API.ErrorHandling{
                     Details = e.Message
                 };
                 break;
+            case MySqlException:
+                context.Response.StatusCode = 500;
+                response = new{
+                    Status = "Error",
+                    StatusCode = context.Response.StatusCode,
+                    Message="Database error!!",
+                    Details = e.Message
+                };
+                break;
             default:
                 context.Response.StatusCode = 500;
                 response = new {

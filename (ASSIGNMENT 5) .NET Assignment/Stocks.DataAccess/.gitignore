@@ -1,0 +1,38 @@
+# Ignore Visual Studio and JetBrains Rider files
+.vscode/
+*.suo
+*.user
+*.vs/
+*.vscode/
+
+# Ignore build outputs
+bin/
+obj/
+*.dll
+*.pdb
+*.exe
+*.log
+*.cache
+*.vspscc
+*.vspcc
+*.pfx
+*.snk
+
+# Ignore dependency files
+packages/
+node_modules/
+
+# Ignore environment variables and secrets
+.env
+secrets.json
+config.json
+appsettings.*.json
+
+# Ignore test results
+TestResults/
+*.coverage
+*.trx
+
+# Ignore IDE-specific files
+.idea/
+*.sln.docstates
