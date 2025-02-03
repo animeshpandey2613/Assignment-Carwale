@@ -6,8 +6,8 @@
 *.vscode/
 
 # Ignore build outputs
-bin/
-obj/
+bin
+obj
 *.dll
 *.pdb
 *.exe
